@@ -1,0 +1,26 @@
+.cake {
+    -fx-font: 16px "Serif";
+    -fx-padding: 30 15 30 15;
+}
+
+.text-field:error {
+    -fx-text-box-border: red ;
+    -fx-focus-color: red ;
+}
+
+/*.label {
+    -fx-font: 28px Vivaldi;
+}*/
+
+.bordered-titled-title {
+    /*-fx-background-color: #F0F0F0;*/
+    -fx-translate-y: -10;
+}
+
+.bordered-titled-border {
+    -fx-content-display: top;
+    /*-fx-border-insets: 20 15 15 15;*/
+    /*-fx-background-color: white;*/
+    -fx-border-color: #cdcdcd;
+    -fx-border-width: 1;
+}

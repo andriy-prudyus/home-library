@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controller.book.BookListController">
+   <children>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#onBackClicked" text="Back" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+            <Button mnemonicParsing="false" text="Menu" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
+         </children>
+      </GridPane>
+      <SplitPane dividerPositions="0.05" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+        <items>
+            <VBox maxHeight="1.7976931348623157E308">
+               <children>
+                  <TreeView fx:id="tvCatalogs" maxHeight="1.7976931348623157E308" showRoot="false" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+            <SplitPane dividerPositions="0.8" orientation="VERTICAL">
+              <items>
+                  <VBox>
+                     <children>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0">
+                          <items>
+                            <Button mnemonicParsing="false" onAction="#onNewClicked" text="+" />
+                              <Button fx:id="btnEdit" disable="true" mnemonicParsing="false" onAction="#onEditClicked" text="Edit" />
+                          </items>
+                        </ToolBar>
+                        <TableView fx:id="tvBooks" VBox.vgrow="ALWAYS">
+                          <columns>
+                            <TableColumn fx:id="tcAuthor" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="Author" />
+                            <TableColumn fx:id="tcBookName" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="Book Name" />
+                              <TableColumn fx:id="tcPublicationYear" maxWidth="1.7976931348623157E308" minWidth="50.0" prefWidth="-1.0" text="Year" />
+                              <TableColumn fx:id="tcPublication" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="Publication" />
+                              <TableColumn fx:id="tcNotes" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="Notes" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <ScrollPane fitToWidth="true" prefViewportHeight="128.0" prefViewportWidth="668.0">
+                     <content>
+                        <TabPane>
+                          <tabs>
+                            <Tab closable="false" text="Main Info">
+                              <content>
+                                    <GridPane fx:id="gpContent" hgap="5.0" vgap="5.0">
+                                       <children>
+                                          <Label text="Author:" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Book Name:" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <TextField fx:id="tfBookName" stylesheets="@../../style/common.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <Label text="Year:" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Publication:" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <TextField fx:id="tfPublication" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="tfYear" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Notes:" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <TextArea fx:id="taNotes" prefHeight="50.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                          </TextArea>
+                                          <GridPane fx:id="gpAuthors" hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1">
+                                             <children>
+                                                <Label text="Last Name" GridPane.columnIndex="1" />
+                                                <Label text="First Name" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                       </children>
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="-Infinity" />
+                                          <ColumnConstraints hgrow="ALWAYS" />
+                                       </columnConstraints>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="-Infinity" valignment="TOP" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                    </GridPane>
+                              </content>
+                            </Tab>
+                            <Tab closable="false" text="Categories">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                          </tabs>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TabPane>
+                     </content>
+                  </ScrollPane>
+              </items>
+            </SplitPane>
+        </items>
+      </SplitPane>
+   </children>
+</VBox>

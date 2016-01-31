@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane fx:id="root" dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controller.home.HomeController">
+  <items>
+    <AnchorPane fx:id="apTop" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+    <AnchorPane fx:id="apBottom" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" /> 
+  </items>
+   <stylesheets>
+      <URL value="@../../style/library_list.css" />
+      <URL value="@../../style/common.css" />
+   </stylesheets>
+</SplitPane>
